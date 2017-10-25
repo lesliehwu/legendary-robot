@@ -1,4 +1,7 @@
+//app.component.ts
+
 import { Component } from '@angular/core';
+import { User } from './user';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+    user=new User();
+    users=[];
+    onSubmit(){
+        this.users.push(this.user);
+        this.user=new User();
+    }
 }
